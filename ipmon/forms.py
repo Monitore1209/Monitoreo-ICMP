@@ -11,7 +11,7 @@ from ipmon import config
 
 
 class FirstTimeSetupForm(FlaskForm):
-    password_policy = 'Password Policy: Minimum Length ({}), Minimum Uppercase ({}), Minimum Non-Letters ({}).'.format(
+    password_policy = 'Política de contraseña: longitud mínima ({}), letras mayúscula  mínimas ({}), números mínimos ({}).'.format(
         config['Password_Policy']['Length'],
         config['Password_Policy']['Uppercase'],
         config['Password_Policy']['Nonletters']
@@ -37,29 +37,29 @@ class LoginForm(FlaskForm):
 
 
 class UpdatePasswordForm(FlaskForm):
-    desc = 'Password Policy: Minimum Length ({}), Minimum Uppercase ({}), Minimum Non-Letters ({}).'.format(
+    desc = 'Politica de contraseña: longitud mínima ({}), mínimo letras mayúsculas minúsculas ({}), mínimo de números ({}).'.format(
         config['Password_Policy']['Length'],
         config['Password_Policy']['Uppercase'],
         config['Password_Policy']['Nonletters']
     )
-    current_password = PasswordField('Current Password', validators=[DataRequired(message="Current password required")])
-    new_password = PasswordField('New Password', description=desc, validators=[DataRequired(message="New password required")])
-    verify_password = PasswordField('Verify Password', validators=[DataRequired(message="Password verification required")])
-    submit = SubmitField('Update')
+    current_password = PasswordField('Contraseña  Actual', validators=[DataRequired(message="Contraseña actual requerida")])
+    new_password = PasswordField('Nueva Contraseña', description=desc, validators=[DataRequired(message="Contraseña  nueva requerida")])
+    verify_password = PasswordField('Confirmar Nueva Contraseña', validators=[DataRequired(message="Confirmar Nueva Contraseña")])
+    submit = SubmitField('Actualizar')
 
 
 class UpdateEmailForm(FlaskForm):
-    email = StringField('New Email Address', validators=[DataRequired(message="Email address required"), Email(message="Invalid email address")])
-    email_verify = StringField('Verify Email Address', validators=[DataRequired(message="Verify Email address required"), Email(message="Invalid email address")])
-    password = PasswordField('Password', validators=[DataRequired(message="Password required")])
-    submit = SubmitField('Update')
+    email = StringField('Nuevo Email', validators=[DataRequired(message="Nuevo email requerido"), Email(message="Invalid email address")])
+    email_verify = StringField('Confirmar email', validators=[DataRequired(message="Confirmación email requerida"), Email(message="Invalid email address")])
+    password = PasswordField('Contraseña', validators=[DataRequired(message="Contraseña requerida")])
+    submit = SubmitField('Actualizar')
 
 
 class SmtpConfigForm(FlaskForm):
     server = StringField('Server', validators=[DataRequired(message="Server required")])
     port = IntegerField('Port', validators=[DataRequired(message="Port required"), NumberRange(min=0, message="Invalid port number")])
     sender = StringField('Sender Address', validators=[DataRequired(message="Sender address required"), Email(message="Invalid email address")])
-    submit = SubmitField('Update')
+    submit = SubmitField('Actualizar')
 
 
 class AddHostsForm(FlaskForm):
@@ -69,7 +69,7 @@ class AddHostsForm(FlaskForm):
 
 class SelectThemeForm(FlaskForm):
     theme = SelectField('Tema', config['Web_Themes'].items())
-    submit = SubmitField('Update')
+    submit = SubmitField('Actualizar')
 
 
 class PollingConfigForm(FlaskForm):
