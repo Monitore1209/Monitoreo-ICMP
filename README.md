@@ -11,15 +11,19 @@ Los siguientes ajustes deberán realizarse para la configuración:
 
 1.- Python 3.0+ debe estar instalado
 
+```Instalar el repositorio```
+
+2.- git clone https://github.com/Monitore1209/Monitoreo.git 
+
 ```Instalar los requisitos de Python```
 
-2.- Desde el directorio principal de este repositorio, ejecute el siguiente comando:
+3.- Desde el directorio principal de este repositorio, ejecute el siguiente comando:
 
 pip install -r requirements.txt
 
  ```Configuración```
 
-3.-Siga las instrucciones a continuación para ejecutar el servidor web y navegar hacia el servidor una vez que esté en funcionamiento. Será redirigido a una página de configuración para realizar la configuración inicial de la aplicación/web y de la base de datos.
+4.-Siga las instrucciones a continuación para ejecutar el servidor web y navegar hacia el servidor una vez que esté en funcionamiento. Será redirigido a una página de configuración para realizar la configuración inicial de la aplicación/web y de la base de datos.
 
 ****Nota:** Configurará una cuenta de administrador durante la configuración, esta cuenta deberá ser utilizada para una funcionalidad completa. De forma predeterminada, los visitantes no autenticados solo podrán ver los estados de IP.
 
