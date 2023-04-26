@@ -17,23 +17,23 @@ class FirstTimeSetupForm(FlaskForm):
         config['Password_Policy']['Nonletters']
     )
     username = StringField('Nombre de Usuario', validators=[DataRequired(message="Nombre de Usuario requerido")])
-    email = StringField('Email', validators=[DataRequired(message="Email requerido"), Email(message="Email invalido")])
-    password = PasswordField('Contraseña', description=password_policy, validators=[DataRequired(message="Contraseña nueva requerido")])
-    verify_password = PasswordField('Verificar Contraseña', validators=[DataRequired(message="Verificación Contraseña requerido")])
-    poll_interval = IntegerField('Tiempo de Consulta (Segundos)', validators=[DataRequired(message="Tiempo de Consulta requerido")])
-    retention_days = IntegerField('Historial  de almacenamiento de consultas (Días)', validators=[DataRequired(message="Historial  de almacenamiento de consultas requerido)])
+    email = StringField('Email', validators=[DataRequired(message="Email requerido"), Email(message="Invalid email address")])
+    password = PasswordField('Contraseña', description=password_policy, validators=[DataRequired(message="Contraseña requerida")])
+    verify_password = PasswordField('Confirmar Contraseña', validators=[DataRequired(message="Verificación contraseña  requerida")])
+    poll_interval = IntegerField('Intervalo de consultas (segundos)', validators=[DataRequired(message="Intervalo de consultas requerido")])
+    retention_days = IntegerField('Tiempo de almacenamiento de información (Días)', validators=[DataRequired(message="Tiempo de almacenamiento requerido")])
     enable_smtp = BooleanField('Enable SMTP Alerts')
     smtp_server = StringField('Servidor')
     smtp_port = StringField('Puerto')
-    smtp_sender = StringField('Dirección del remitente')
+    smtp_sender = StringField('Dirección remitente')
     submit = SubmitField('Enviar')
 
 
 class LoginForm(FlaskForm):
-    username = StringField('Username', validators=[DataRequired(message="Username required")])
-    password = PasswordField('Password', validators=[DataRequired(message="Password required")])
-    remember_me = BooleanField('Remember Me')
-    submit = SubmitField('Login')
+    username = StringField('Nombre de Usuario', validators=[DataRequired(message="Nombre de Usuario requerido")])
+    password = PasswordField('Contraseña', validators=[DataRequired(message="Contraseña requerida")])
+    remember_me = BooleanField('Recuerdame')
+    submit = SubmitField('Iniciar Sesión')
 
 
 class UpdatePasswordForm(FlaskForm):
