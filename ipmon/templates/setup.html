@@ -12,7 +12,7 @@
                     Configuración Sistema de Monitoreo
                 </h1>
                 <h2 class="subtitle is-4">
-                    Configuración Iniciaal
+                    Configuración Inicial
                 </h2>
             </div>
         </div>
@@ -25,7 +25,9 @@
         <div class="box">
             <p class="title is=3">Cuenta de Aadministrador</p>
             <p class="subtitle is=5">
-                La cuenta de administrador tendrá privilegios para agregar / administrar hosts, configurar SMTP, sondeo, etc. 
+                La cuenta de administrador tendrá privilegios para agregar / administrar dispositivos, configurar SMTP, consultas, etc.
+	    </p> 
+	    <p class="subtitle is=5">
 		Los visitantes no autenticados solo podrán ver el estado del anfitrión en la página principal.
             </p>
             <div class="field">
@@ -59,13 +61,13 @@
         <div class="box">
             <p class="title is=3">Configuración Consultas</p>
             <p class="subtitle is=5">
-                El sondeo de hosts se ejecuta en un temporizador definido en el intervalo de sondeo a continuación. El trabajo de sondeo ejecuta un comando ping rápido a cada host para comprobar su estado. Se mantendrá un historial de estados de sondeo para cada host durante el número de días definido  
+                El sondeo o consultas de dispositivos se ejecuta en un temporizador definido en el intervalo de configuración. La consulta ejecuta un comando ping rápido a cada dispositivo para comprobar su estado. Se mantendrá un historial de estados de consulta para cada dispositivo durante el número de días definido  
 	    </p>
                <div class="field"> 
                    <div class="control">
                     {{ form.poll_interval.label(class_="label") }}
                     {{ form.poll_interval(class_="input is-large", id="polling-interval") }}
-                    <p class="help">Tiempo n segundos de intervalo de consultas</p>
+                    <p class="help">Tiempo en segundos de intervalo de consultas</p>
                  </div>
 
             </div>
@@ -73,7 +75,7 @@
                 <div class="control">
                     {{ form.retention_days.label(class_="label") }}
                     {{ form.retention_days(class_="input is-large", id="history-retention") }}
-                    <p class="help">Numero de díaas que se guardar la información de laas consultaaas de cada disposiotivo</p>
+                    <p class="help">Numero de días que se guardar la información de las consultaaas de cada dispositivo</p>
                 </div>
 
             </div>
