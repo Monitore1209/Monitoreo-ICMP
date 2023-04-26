@@ -16,17 +16,17 @@ class FirstTimeSetupForm(FlaskForm):
         config['Password_Policy']['Uppercase'],
         config['Password_Policy']['Nonletters']
     )
-    username = StringField('Username', validators=[DataRequired(message="Username required")])
-    email = StringField('Email Address', validators=[DataRequired(message="Email address required"), Email(message="Invalid email address")])
-    password = PasswordField('Password', description=password_policy, validators=[DataRequired(message="New password required")])
-    verify_password = PasswordField('Verify Password', validators=[DataRequired(message="Password verification required")])
-    poll_interval = IntegerField('Polling Interval (Seconds)', validators=[DataRequired(message="Polling interval required")])
-    retention_days = IntegerField('Poll History Retention (Days)', validators=[DataRequired(message="Poll history retention required")])
+    username = StringField('Nombre de Usuario', validators=[DataRequired(message="Nombre de Usuario requerido")])
+    email = StringField('Email', validators=[DataRequired(message="Email requerido"), Email(message="Email invalido")])
+    password = PasswordField('Contraseña', description=password_policy, validators=[DataRequired(message="Contraseña nueva requerido")])
+    verify_password = PasswordField('Verificar Contraseña', validators=[DataRequired(message="Verificación Contraseña requerido")])
+    poll_interval = IntegerField('Tiempo de Consulta (Segundos)', validators=[DataRequired(message="Tiempo de Consulta requerido")])
+    retention_days = IntegerField('Historial  de almacenamiento de consultas (Días)', validators=[DataRequired(message="Historial  de almacenamiento de consultas requerido)])
     enable_smtp = BooleanField('Enable SMTP Alerts')
-    smtp_server = StringField('Server')
-    smtp_port = StringField('Port')
-    smtp_sender = StringField('Sender Address')
-    submit = SubmitField('Submit')
+    smtp_server = StringField('Servidor')
+    smtp_port = StringField('Puerto')
+    smtp_sender = StringField('Dirección del remitente')
+    submit = SubmitField('Enviar')
 
 
 class LoginForm(FlaskForm):
